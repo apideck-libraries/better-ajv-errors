@@ -65,4 +65,4 @@ Function that formats ajv validation errors in a human-friendly format.
 
 ## Related
 
-- [atlassian/better-ajv-errors](https://github.com/atlassian/better-ajv-errors) was the inspiration for this library. Atlassian's version is more focused on CLI errors, this library is focused on JSON APIs.
+- [atlassian/better-ajv-errors](https://github.com/atlassian/better-ajv-errors) was the inspiration for this library. Atlassian's library is more focused on CLI errors, this library is focused on developer-friendly API error messages.
