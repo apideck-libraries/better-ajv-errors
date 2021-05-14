@@ -55,6 +55,14 @@ Function that formats ajv validation errors in a human-friendly format.
   - `schema: JSONSchema` The schema you passed to ajv to validate against.
   - `basePath?: string` An optional base path to prefix paths returned by `betterAjvErrors`. For example, in APIs, it could be useful to use `'{requestBody}'` or `'{queryParemeters}'` as a basePath. This will make it clear to users where exactly the error occurred.
 
+#### Return Value
+
+- `ValidationError[]` Array of formatted errors (properties of `ValidationError` below)
+  - `message: string` Formatted error message
+  - `suggestion?: string` Optional suggestion based on provided data and schema
+  - `path: string` Object path in the data object where the error occurred (example: `.foo.bar.0.quz`)
+  - `context: { errorType: DefinedError['keyword']; [additionalContext: string]: unknown }` `errorType` is `error.keyword` proxied from `ajv`. `errorType` can be used as a key for i18n if needed. There might be additional properties on context, based on the type of error.
+
 ## Related
 
-- [atlassian/better-ajv-errors](https://github.com/atlassian/better-ajv-errors) was the inspiration for this library. [atlassian/better-ajv-errors](https://github.com/atlassian/better-ajv-errors) is more focused on CLI errors, this library is focused on JSON APIs.
+- [atlassian/better-ajv-errors](https://github.com/atlassian/better-ajv-errors) was the inspiration for this library. Atlassian's version is more focused on CLI errors, this library is focused on JSON APIs.
