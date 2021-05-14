@@ -1,22 +1,24 @@
 import { DefinedError, ErrorObject } from 'ajv';
-import { JSONSchema6 } from 'json-schema';
+import type { JSONSchema6 } from 'json-schema';
 import pointer from 'jsonpointer';
 import { ValidationError } from 'types/ValidationError';
 import { filterSingleErrorPerProperty } from './lib/filter';
 import { getSuggestion } from './lib/suggestions';
 import { cleanAjvMessage, getLastSegment, pointerToDotNotation } from './lib/utils';
 
+export interface BetterAjvErrorsOptions {
+  errors: ErrorObject[] | null | undefined;
+  data: any;
+  schema: JSONSchema6;
+  basePath?: string;
+}
+
 export const betterAjvErrors = ({
   errors,
   data,
   schema,
   basePath = '{base}',
-}: {
-  errors: ErrorObject[] | null | undefined;
-  data: any;
-  schema: JSONSchema6;
-  basePath?: string;
-}): ValidationError[] => {
+}: BetterAjvErrorsOptions): ValidationError[] => {
   if (!Array.isArray(errors) || errors.length === 0) {
     return [];
   }

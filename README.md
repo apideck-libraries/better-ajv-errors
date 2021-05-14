@@ -7,6 +7,8 @@
 - Suggestions for spelling mistakes
 - Minimal footprint: 1.56 kB (gzip + minified)
 
+![better-ajv-errors output Example](https://user-images.githubusercontent.com/8850410/118274790-e0529e80-b4c5-11eb-8188-9097c8064c61.png)
+
 ## Install
 
 ```bash
@@ -35,10 +37,7 @@ const ajv = new Ajv({ allErrors: true });
 const valid = ajv.validate(schema, data);
 
 if (!valid) {
-  const output = betterAjvErrors(schema, validate.errors, {
-    propertyPath: [],
-    targetValue: data,
-  });
+  const betterErrors = betterAjvErrors({ schema, data, errors: ajv.errors });
 }
 ```
 
@@ -46,38 +45,15 @@ if (!valid) {
 
 ### betterAjvErrors
 
-Returns formatted validation error to **print** in `console`. See
-[`options.format`](#format) for further details.
+Function that formats ajv validation errors in a human-friendly format.
 
-#### schema
+#### Parameters
 
-Type: `Object`
-
-The JSON Schema you used for validation with `ajv`.
-
-#### errors
-
-Type: `Array`
-
-Array of
-[ajv validation errors](https://github.com/epoberezkin/ajv#validation-errors)
-
-#### options
-
-Type: `Object`
-
-##### propertyPath
-
-Type: `Array`
-
-Property path of a validated object that is a part of a bigger document. Might
-be empty if the validated object equals the whole document.
-
-##### targetValue
-
-Type: `Object`
-
-The JSON payload you validate against using `ajv`.
+- `options: BetterAjvErrorsOptions`
+  - `errors: ErrorObject[] | null | undefined` Your ajv errors, you will find these in the `errors` property of your ajv instance (`ErrorObject` is a type from the ajv package).
+  - `data: Object` The data you passed to ajv to be validated.
+  - `schema: JSONSchema` The schema you passed to ajv to validate against.
+  - `basePath?: string` An optional base path to prefix paths returned by `betterAjvErrors`. For example, in APIs, it could be useful to use `'{requestBody}'` or `'{queryParemeters}'` as a basePath. This will make it clear to users where exactly the error occurred.
 
 ## Related
 
