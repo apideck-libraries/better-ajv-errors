@@ -25,7 +25,7 @@ export const betterAjvErrors = ({
 
   const definedErrors = filterSingleErrorPerProperty(errors as DefinedError[]);
 
-  return definedErrors.map(error => {
+  return definedErrors.map((error) => {
     const path = pointerToDotNotation(basePath + error.instancePath);
     const prop = getLastSegment(error.instancePath);
     const defaultContext = {
@@ -45,7 +45,7 @@ export const betterAjvErrors = ({
           suggestion: getSuggestion({
             value: additionalProp,
             suggestions: Object.keys(properties),
-            format: suggestion => `Did you mean property '${suggestion}'?`,
+            format: (suggestion) => `Did you mean property '${suggestion}'?`,
           }),
           path,
           context: defaultContext,

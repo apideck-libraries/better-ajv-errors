@@ -72,6 +72,9 @@
     "jsonpointer": "^4.1.0",
     "leven": "^3.1.0"
   },
+  "resolutions": {
+    "prettier": "^2.3.0"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"

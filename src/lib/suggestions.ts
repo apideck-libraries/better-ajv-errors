@@ -3,7 +3,7 @@ import leven from 'leven';
 export const getSuggestion = ({
   value,
   suggestions,
-  format = suggestion => `Did you mean '${suggestion}'?`,
+  format = (suggestion) => `Did you mean '${suggestion}'?`,
 }: {
   value: string;
   suggestions: string[];
