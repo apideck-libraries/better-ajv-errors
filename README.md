@@ -1,4 +1,4 @@
-# @apideck/better-ajv-errors
+# @apideck/better-ajv-errors 👮‍♀️
 
 > Human-friendly JSON Schema validation for APIs
 
