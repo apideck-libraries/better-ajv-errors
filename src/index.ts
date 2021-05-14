@@ -1,7 +1,7 @@
 import { DefinedError, ErrorObject } from 'ajv';
 import type { JSONSchema6 } from 'json-schema';
 import pointer from 'jsonpointer';
-import { ValidationError } from 'types/ValidationError';
+import { ValidationError } from './types/ValidationError';
 import { filterSingleErrorPerProperty } from './lib/filter';
 import { getSuggestion } from './lib/suggestions';
 import { cleanAjvMessage, getLastSegment, pointerToDotNotation } from './lib/utils';
