@@ -21,7 +21,7 @@ or
 $ npm i @apideck/better-ajv-errors
 ```
 
-Also make sure that you've installed the [ajv](https://www.npmjs.com/package/ajv) at version 8 or higher.
+Also make sure that you've installed [ajv](https://www.npmjs.com/package/ajv) at version 8 or higher.
 
 ## Usage
 
@@ -60,7 +60,7 @@ Function that formats ajv validation errors in a human-friendly format.
 - `ValidationError[]` Array of formatted errors (properties of `ValidationError` below)
   - `message: string` Formatted error message
   - `suggestion?: string` Optional suggestion based on provided data and schema
-  - `path: string` Object path in the data object where the error occurred (example: `.foo.bar.0.quz`)
+  - `path: string` Object path where the error occurred (example: `.foo.bar.0.quz`)
   - `context: { errorType: DefinedError['keyword']; [additionalContext: string]: unknown }` `errorType` is `error.keyword` proxied from `ajv`. `errorType` can be used as a key for i18n if needed. There might be additional properties on context, based on the type of error.
 
 ## Related
