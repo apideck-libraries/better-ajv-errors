@@ -1,0 +1,87 @@
+{
+  "name": "@apideck/better-ajv-errors",
+  "description": "Human-friendly JSON Schema validation for APIs",
+  "version": "0.1.0",
+  "author": "Apideck <support@apideck.com> (https://apideck.com/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apideck-libraries/better-ajv-errors"
+  },
+  "bugs": {
+    "url": "https://github.com/apideck-libraries/better-ajv-errors/issues"
+  },
+  "contributors": [
+    "Elias Meire <elias@apideck.com>"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/better-ajv-errors.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "release": "np",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/better-ajv-errors.cjs.production.min.js",
+      "limit": "2 KB"
+    },
+    {
+      "path": "dist/better-ajv-errors.esm.js",
+      "limit": "2 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.2",
+    "ajv": "^8.3.0",
+    "husky": "^6.0.0",
+    "np": "^7.5.0",
+    "size-limit": "^4.10.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.2.0",
+    "typescript": "^3.9.4"
+  },
+  "peerDependencies": {
+    "ajv": ">=8"
+  },
+  "dependencies": {
+    "jsonpointer": "^4.1.0",
+    "leven": "^3.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "keywords": [
+    "apideck",
+    "ajv",
+    "json",
+    "schema",
+    "json-schema",
+    "errors",
+    "human"
+  ]
+}
