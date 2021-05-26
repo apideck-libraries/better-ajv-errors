@@ -55,11 +55,11 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^4.10.2",
-    "ajv": "^8.3.0",
+    "@size-limit/preset-small-lib": "^4.11.0",
+    "ajv": "^8.5.0",
     "husky": "^6.0.0",
     "np": "^7.5.0",
-    "size-limit": "^4.10.2",
+    "size-limit": "^4.11.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.2.0",
     "typescript": "^3.9.4"

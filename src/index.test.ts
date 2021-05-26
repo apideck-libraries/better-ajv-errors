@@ -117,6 +117,40 @@ describe('betterAjvErrors', () => {
         },
       ]);
     });
+
+    it('should handle multiple required properties', () => {
+      schema = {
+        type: 'object',
+        required: ['req1', 'req2'],
+        properties: {
+          req1: {
+            type: 'string',
+          },
+          req2: {
+            type: 'string',
+          },
+        },
+      };
+      data = {};
+      ajv.validate(schema, data);
+      const errors = betterAjvErrors({ data, schema, errors: ajv.errors });
+      expect(errors).toEqual([
+        {
+          context: {
+            errorType: 'required',
+          },
+          message: "{base} must have required property 'req1'",
+          path: '{base}',
+        },
+        {
+          context: {
+            errorType: 'required',
+          },
+          message: "{base} must have required property 'req2'",
+          path: '{base}',
+        },
+      ]);
+    });
   });
 
   describe('type', () => {

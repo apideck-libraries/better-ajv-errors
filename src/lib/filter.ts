@@ -3,7 +3,8 @@ import { AJV_ERROR_KEYWORD_WEIGHT_MAP } from '../constants';
 
 export const filterSingleErrorPerProperty = (errors: DefinedError[]): DefinedError[] => {
   const errorsPerProperty = errors.reduce<Record<string, DefinedError>>((acc, error) => {
-    const prop = error.instancePath + (error.params as any)?.additionalProperty ?? '';
+    const prop =
+      error.instancePath + ((error.params as any)?.additionalProperty ?? (error.params as any)?.missingProperty ?? '');
     const existingError = acc[prop];
     if (!existingError) {
       acc[prop] = error;
