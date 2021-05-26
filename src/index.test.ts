@@ -232,4 +232,94 @@ describe('betterAjvErrors', () => {
       ]);
     });
   });
+
+  it('should handle array paths', () => {
+    data = {
+      custom: [{ foo: 'bar' }, { aaa: 'zzz' }],
+    };
+    schema = {
+      type: 'object',
+      properties: {
+        custom: {
+          type: 'array',
+          items: {
+            type: 'object',
+            additionalProperties: false,
+            properties: {
+              id: {
+                type: 'string',
+              },
+              title: {
+                type: 'string',
+              },
+            },
+          },
+        },
+      },
+    };
+    ajv.validate(schema, data);
+    const errors = betterAjvErrors({ data, schema, errors: ajv.errors });
+    expect(errors).toEqual([
+      {
+        context: {
+          errorType: 'additionalProperties',
+        },
+        message: "'foo' property is not expected to be here",
+        path: '{base}.custom.0',
+      },
+      {
+        context: {
+          errorType: 'additionalProperties',
+        },
+        message: "'aaa' property is not expected to be here",
+        path: '{base}.custom.1',
+      },
+    ]);
+  });
+
+  it('should handle file $refs', () => {
+    data = {
+      child: [{ foo: 'bar' }, { aaa: 'zzz' }],
+    };
+    schema = {
+      $id: 'http://example.com/schemas/Main.json',
+      type: 'object',
+      properties: {
+        child: {
+          type: 'array',
+          items: {
+            $ref: './Child.json',
+          },
+        },
+      },
+    };
+    ajv.addSchema({
+      $id: 'http://example.com/schemas/Child.json',
+      additionalProperties: false,
+      type: 'object',
+      properties: {
+        id: {
+          type: 'string',
+        },
+      },
+    });
+    ajv.validate(schema, data);
+    const errors = betterAjvErrors({ data, schema, errors: ajv.errors });
+    expect(errors).toEqual([
+      {
+        context: {
+          errorType: 'additionalProperties',
+        },
+        message: "'foo' property is not expected to be here",
+        path: '{base}.child.0',
+      },
+      {
+        context: {
+          errorType: 'additionalProperties',
+        },
+        message: "'aaa' property is not expected to be here",
+        path: '{base}.child.1',
+      },
+    ]);
+  });
 });
