@@ -108,4 +108,4 @@ export const betterAjvErrors = ({
   });
 };
 
-export { ValidationError } from 'types/ValidationError';
+export { ValidationError };
