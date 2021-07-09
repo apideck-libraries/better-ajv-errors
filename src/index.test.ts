@@ -91,6 +91,32 @@ describe('betterAjvErrors', () => {
         },
       ]);
     });
+
+    it('should handle object schemas without properties', () => {
+      data = {
+        empty: { foo: 1 },
+      };
+      schema = {
+        type: 'object',
+        properties: {
+          empty: {
+            type: 'object',
+            additionalProperties: false,
+          },
+        },
+      };
+      ajv.validate(schema, data);
+      const errors = betterAjvErrors({ data, schema, errors: ajv.errors });
+      expect(errors).toEqual([
+        {
+          context: {
+            errorType: 'additionalProperties',
+          },
+          message: "'foo' property is not expected to be here",
+          path: '{base}.empty',
+        },
+      ]);
+    });
   });
 
   describe('required', () => {

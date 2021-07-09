@@ -47,7 +47,7 @@ export const betterAjvErrors = ({
           message: `'${additionalProp}' property is not expected to be here`,
           suggestion: getSuggestion({
             value: additionalProp,
-            suggestions: Object.keys(properties),
+            suggestions: Object.keys(properties ?? {}),
             format: (suggestion) => `Did you mean property '${suggestion}'?`,
           }),
           path,
