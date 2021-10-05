@@ -348,4 +348,31 @@ describe('betterAjvErrors', () => {
       },
     ]);
   });
+
+  it('should handle number enums', () => {
+    data = {
+      isLive: 2,
+    };
+    schema = {
+      type: 'object',
+      properties: {
+        isLive: {
+          type: 'integer',
+          enum: [0, 1],
+        },
+      },
+    };
+    ajv.validate(schema, data);
+    const errors = betterAjvErrors({ data, schema, errors: ajv.errors });
+    expect(errors).toEqual([
+      {
+        context: {
+          allowedValues: [0, 1],
+          errorType: 'enum',
+        },
+        message: "'isLive' property must be equal to one of the allowed values",
+        path: '{base}.isLive',
+      },
+    ]);
+  });
 });
