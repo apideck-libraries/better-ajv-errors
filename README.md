@@ -1,4 +1,4 @@
-![npm (scoped)](https://img.shields.io/npm/v/@apideck/better-ajv-errors?color=brightgreen) ![npm](https://img.shields.io/npm/dm/@apideck/better-ajv-errors) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/apideck-libraries/better-ajv-errors/CI)
+[![npm (scoped)](https://img.shields.io/npm/v/@apideck/better-ajv-errors?color=brightgreen)](https://npmjs.com/@apideck/better-ajv-errors) [![npm](https://img.shields.io/npm/dm/@apideck/better-ajv-errors)](https://npmjs.com/@apideck/better-ajv-errors) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/apideck-libraries/better-ajv-errors/CI)](https://github.com/apideck-libraries/better-ajv-errors/actions/workflows/main.yml?query=branch%3Amain++)
 
 # @apideck/better-ajv-errors 👮‍♀️
 
