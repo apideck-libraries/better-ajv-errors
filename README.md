@@ -1,6 +1,9 @@
+![npm (scoped)](https://img.shields.io/npm/v/@apideck/better-ajv-errors?color=brightgreen) ![npm](https://img.shields.io/npm/dm/@apideck/better-ajv-errors) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/apideck-libraries/better-ajv-errors/CI)
+
 # @apideck/better-ajv-errors 👮‍♀️
 
 > Human-friendly JSON Schema validation for APIs
+
 
 - Readable and helpful [ajv](https://github.com/ajv-validator/ajv) errors
 - API-friendly format
