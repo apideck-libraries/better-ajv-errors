@@ -1,7 +1,7 @@
 {
   "name": "@apideck/better-ajv-errors",
   "description": "Human-friendly JSON Schema validation for APIs",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "Apideck <support@apideck.com> (https://apideck.com/)",
   "license": "MIT",
   "repository": {
