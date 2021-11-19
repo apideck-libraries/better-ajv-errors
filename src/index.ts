@@ -91,7 +91,13 @@ export const betterAjvErrors = ({
         };
         break;
       }
-
+      case 'const': {
+        return { message: defaultMessage, path, context: {
+          ...defaultContext,
+          allowedValue: error.params.allowedValue,
+        } };
+      }
+      
       default:
         return { message: defaultMessage, path, context: defaultContext };
     }
