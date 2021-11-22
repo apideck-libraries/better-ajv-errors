@@ -386,7 +386,7 @@ describe('betterAjvErrors', () => {
         properties: {
           const: {
             type: 'integer',
-            const: 42
+            const: 42,
           },
         },
       };
@@ -401,7 +401,7 @@ describe('betterAjvErrors', () => {
           message: "property 'const' must be equal to constant",
           path: '{base}.const',
         },
-      ]);  
+      ]);
     });
-  })
+  });
 });
