@@ -398,7 +398,7 @@ describe('betterAjvErrors', () => {
             allowedValue: 42,
             errorType: 'const',
           },
-          message: "property 'const' must be equal to constant",
+          message: "'const' property must be equal to the allowed value",
           path: '{base}.const',
         },
       ]);

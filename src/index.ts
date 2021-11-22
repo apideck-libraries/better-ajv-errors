@@ -93,7 +93,7 @@ export const betterAjvErrors = ({
       }
       case 'const': {
         return {
-          message: defaultMessage,
+          message: `'${prop}' property must be equal to the allowed value`,
           path,
           context: {
             ...defaultContext,
