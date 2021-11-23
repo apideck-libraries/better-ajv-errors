@@ -91,6 +91,16 @@ export const betterAjvErrors = ({
         };
         break;
       }
+      case 'const': {
+        return {
+          message: `'${prop}' property must be equal to the allowed value`,
+          path,
+          context: {
+            ...defaultContext,
+            allowedValue: error.params.allowedValue,
+          },
+        };
+      }
 
       default:
         return { message: defaultMessage, path, context: defaultContext };

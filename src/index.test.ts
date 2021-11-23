@@ -375,4 +375,33 @@ describe('betterAjvErrors', () => {
       },
     ]);
   });
+
+  describe('const', () => {
+    it('should handle const errors', () => {
+      data = {
+        const: 2,
+      };
+      schema = {
+        type: 'object',
+        properties: {
+          const: {
+            type: 'integer',
+            const: 42,
+          },
+        },
+      };
+      ajv.validate(schema, data);
+      const errors = betterAjvErrors({ data, schema, errors: ajv.errors });
+      expect(errors).toEqual([
+        {
+          context: {
+            allowedValue: 42,
+            errorType: 'const',
+          },
+          message: "'const' property must be equal to the allowed value",
+          path: '{base}.const',
+        },
+      ]);
+    });
+  });
 });
