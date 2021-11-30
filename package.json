@@ -69,7 +69,7 @@
     "ajv": ">=8"
   },
   "dependencies": {
-    "json-schema": "^0.3.0",
+    "json-schema": "^0.4.0",
     "jsonpointer": "^5.0.0",
     "leven": "^3.1.0"
   },
