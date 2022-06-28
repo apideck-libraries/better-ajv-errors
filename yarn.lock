@@ -3108,9 +3108,9 @@ eslint-plugin-prettier@^3.1.0:
     prettier-linter-helpers "^1.0.0"
 
 eslint-plugin-prettier@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-4.0.0.tgz#8b99d1e4b8b24a762472b4567992023619cb98e0"
-  integrity sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-4.1.0.tgz#1cd4b3fadf3b3cdb30b1874b55e7f93f85eb43ad"
+  integrity sha512-A3AXIEfTnq3D5qDFjWJdQ9c4BLhw/TqhSR+6+SVaoPJBAWciFEuJiNQh275OnjRrAi7yssZzuWBRw66VG2g6UA==
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
@@ -5707,9 +5707,9 @@ normalize-url@^6.0.1:
   integrity sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==
 
 np@^7.6.1:
-  version "7.6.1"
-  resolved "https://registry.yarnpkg.com/np/-/np-7.6.1.tgz#b1cd70a0941d03779f4c7e9036ec67b227aee604"
-  integrity sha512-EHr5PtMPzNmkM/trnWQWTKAogJnVP1RzTFfIyvPK2COvLN6Vqut4gFXuWNng15xuqnTgmUPzKYbpQAZsYR+Dkw==
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/np/-/np-7.6.2.tgz#02650c024b232cb8c958846c44f672c2f8951b7c"
+  integrity sha512-gExmKGKixh7ITc4Q+Lv7nfCby0CVKvzri9zN8970oKD8976T4L5dw8QWUtMcXcIjhFF6h5lbvztao/NurDbmxQ==
   dependencies:
     "@samverschueren/stream-to-observable" "^0.3.1"
     any-observable "^0.5.1"
@@ -7618,9 +7618,9 @@ typescript@^3.7.3:
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
 typescript@^4.7.2:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.2.tgz#1f9aa2ceb9af87cca227813b4310fff0b51593c4"
-  integrity sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==
+  version "4.7.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
+  integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
