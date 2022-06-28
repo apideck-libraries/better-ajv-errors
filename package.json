@@ -31,7 +31,7 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "release": "np",
+    "release": "np --no-publish && npm publish --access public",
     "analyze": "size-limit --why"
   },
   "husky": {
@@ -75,10 +75,6 @@
   },
   "resolutions": {
     "prettier": "^2.3.0"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
   },
   "keywords": [
     "apideck",
