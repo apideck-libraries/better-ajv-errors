@@ -31,7 +31,7 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "release": "np --no-publish && npm publish --access public",
+    "release": "np --no-publish && npm publish --access public --registry https://registry.npmjs.org",
     "analyze": "size-limit --why"
   },
   "husky": {
