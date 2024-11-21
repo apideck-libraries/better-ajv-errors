@@ -22,7 +22,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=18"
   },
   "scripts": {
     "start": "tsdx watch",
