@@ -57,7 +57,7 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^11.1.6",
     "ajv": "^8.17.1",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^9.1.7",
     "np": "^10.0.7",
     "size-limit": "^11.1.6",
