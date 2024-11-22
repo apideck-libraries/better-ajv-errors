@@ -55,12 +55,12 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^11.1.6",
-    "ajv": "^8.17.1",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "ajv": "^8.11.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^8.0.1",
     "np": "^7.6.1",
-    "size-limit": "^11.1.6",
+    "size-limit": "^7.0.8",
     "tsdx": "^0.14.1",
     "json-schema": "^0.4.0",
     "tslib": "^2.4.0",
