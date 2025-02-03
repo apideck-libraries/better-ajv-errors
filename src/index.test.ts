@@ -43,6 +43,26 @@ describe('betterAjvErrors', () => {
     };
   });
 
+  describe('combined schemas', () => {
+    it('should handle type errors', () => {
+      data = {
+        str: 123,
+      };
+      const combinedSchema = {type: 'boolean'};
+      const validateCombined = ajv.addSchema(combinedSchema).compile(schema);
+      validateCombined(data);
+      const betterErrors = betterAjvErrors({ data, schema, errors: validateCombined.errors });
+      expect(betterErrors).toEqual([
+        {
+          context: {
+            errorType: 'type',
+          },
+          message: "'str' property type must be string",
+          path: '{base}.str',
+        },
+      ]);
+    });
+  });
   describe('additionalProperties', () => {
     it('should handle additionalProperties=false', () => {
       data = {
