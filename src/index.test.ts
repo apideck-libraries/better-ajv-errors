@@ -278,6 +278,36 @@ describe('betterAjvErrors', () => {
       ]);
     });
 
+    it('should not crash when allowedValues contains null', () => {
+      data = {
+        str: 'str',
+        enum: 'invalid',
+      };
+      schema = {
+        type: 'object',
+        properties: {
+          str: { type: 'string' },
+          enum: {
+            type: ['string', 'null'],
+            enum: ['one', 'two', null],
+          },
+        },
+      };
+      ajv.validate(schema, data);
+      const errors = betterAjvErrors({ data, schema, errors: ajv.errors });
+      expect(errors).toEqual([
+        {
+          context: {
+            errorType: 'enum',
+            allowedValues: ['one', 'two', null],
+          },
+          message: "'enum' property must be equal to one of the allowed values",
+          path: '{base}.enum',
+          suggestion: "Did you mean 'one'?",
+        },
+      ]);
+    });
+
     it('should not crash on null value', () => {
       data = {
         type: null,

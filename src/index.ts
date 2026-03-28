@@ -55,7 +55,7 @@ export const betterAjvErrors = <S = any>({
         break;
       }
       case 'enum': {
-        const suggestions = error.params.allowedValues.map((value) => value.toString());
+        const suggestions = error.params.allowedValues.map((value) => String(value ?? ''));
         const prop = getLastSegment(error.instancePath);
         const value = safeJsonPointer({ object: data, pnter: error.instancePath, fallback: '' });
         validationError = {
